@@ -10,6 +10,10 @@ py -3 -m pip install windows-curses
 ```bash
 python3 tetris_terminal.py --delay 0.4
 ```
+или
+```bash
+run_tetris.bat
+```
 
 ## Параметры
 - `--delay` — стартовая задержка падения фигур в секундах.
