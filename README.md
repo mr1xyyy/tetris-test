@@ -28,4 +28,4 @@ python3 tetris_terminal.py --delay 0.4
 
 ## Скриншот
 
-![Тетрис в терминале](screenshot.png)
+![Тетрис в терминале](screenshot.jpg)
