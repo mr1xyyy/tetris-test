@@ -1,5 +1,10 @@
 # Тетрис в терминале
 
+Пакет:
+```bash
+py -3 -m pip install windows-curses
+```
+
 Запуск:
 
 ```bash
