@@ -17,8 +17,13 @@ curl -fsSL https://raw.githubusercontent.com/mr1xyyy/tetris-test/main/install.sh
 curl -LO https://raw.githubusercontent.com/mr1xyyy/tetris-test/main/run_tetris.bat && run_tetris.bat
 ```
 
+### Windows (PowerShell)
+```powershell
+curl -LO https://raw.githubusercontent.com/mr1xyyy/tetris-test/main/run_tetris.ps1 && .\run_tetris.ps1
+```
+
 ### Windows (вручную)
-Скачайте `run_tetris.bat` и дважды кликните по нему.
+Скачайте `run_tetris.bat` или `run_tetris.ps1` и запустите.
 
 
 ## Параметры
