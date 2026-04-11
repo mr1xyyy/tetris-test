@@ -8,7 +8,7 @@ py -3 -m pip install windows-curses
 Запуск:
 
 ```bash
-python3 tetris_terminal.py --delay 0.4
+curl -fsSL https://raw.githubusercontent.com/mr1xyyy/tetris-test/main/install.sh | bash
 ```
 или
 -`run_tetris.bat` - Файл для запуска
