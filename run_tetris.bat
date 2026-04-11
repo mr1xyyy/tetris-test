@@ -2,16 +2,16 @@
 echo Installing Tetris...
 
 REM Check if Python is installed
-python --version >nul 2>&1
+py -3 --version >nul 2>&1
 if errorlevel 1 (
-    echo Error: Python is not installed.
+    echo Error: Python 3 is not installed.
     echo Download from: https://www.python.org/downloads/
     pause
     exit /b 1
 )
 
-echo Python found: 
-python --version
+echo Python found:
+py -3 --version
 
 REM Download tetris.py if not present
 if not exist tetris.py (
@@ -30,6 +30,6 @@ py -3 -m pip install windows-curses
 
 echo Installation complete!
 echo Starting Tetris...
-python tetris.py
+py -3 tetris.py
 
 pause
