@@ -1,22 +1,26 @@
 @echo off
 echo Installing Tetris...
 
-REM Try Python 3.13 first (where windows-curses is installed), then fall back to py -3
-py -3.13 --version >nul 2>&1
-if not errorlevel 1 (
-    set PYTHON=py -3.13
-) else (
-    py -3 --version >nul 2>&1
-    if not errorlevel 1 (
-        set PYTHON=py -3
-    ) else (
-        echo Error: Python 3 is not installed.
-        echo Download from: https://www.python.org/downloads/
-        pause
-        exit /b 1
-    )
+REM Detect available Python 3 versions using py launcher
+set PYTHON=
+
+for /f "tokens=2 delims=- " %%v in ('py --list 2^>nul ^| findstr /r "^ *-3\." ^| sort /r') do (
+    set PYTHON=py -%%v
+    goto :found
 )
 
+REM Fallback: try py -3
+py -3 --version >nul 2>&1
+if not errorlevel 1 (
+    set PYTHON=py -3
+) else (
+    echo Error: Python 3 is not installed.
+    echo Download from: https://www.python.org/downloads/
+    pause
+    exit /b 1
+)
+
+:found
 echo Python found:
 %PYTHON% --version
 
