@@ -12,12 +12,29 @@ fi
 
 echo "Python 3 found: $(python3 --version)"
 
-# Install required packages
-echo "Installing required Python packages..."
-pip3 install windows-curses
+# Install pip if not available
+if ! command -v pip3 &> /dev/null; then
+    echo "Installing pip..."
+    if command -v apt &> /dev/null; then
+        sudo apt install -y python3-pip
+    elif command -v dnf &> /dev/null; then
+        sudo dnf install -y python3-pip
+    elif command -v pacman &> /dev/null; then
+        sudo pacman -S --noconfirm python-pip
+    fi
+fi
 
-echo "Installation complete!"
+# Install required packages (curses is built-in on Linux, but check anyway)
+echo "Checking curses module..."
+python3 -c "import curses" 2>/dev/null
+if [ $? -ne 0 ]; then
+    echo "Installing windows-curses..."
+    pip3 install windows-curses
+fi
 
+echo "All dependencies satisfied!"
+
+# Clone and run
 cd /tmp
 git clone https://github.com/mr1xyyy/tetris-test.git 2>/dev/null || echo "Repository already exists in /tmp/tetris-test"
 cd tetris-test
