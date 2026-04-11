@@ -19,6 +19,11 @@ curl -LO https://raw.githubusercontent.com/mr1xyyy/tetris-test/main/run_tetris.b
 
 ### Windows (PowerShell)
 ```powershell
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/mr1xyyy/tetris-test/main/run_tetris.ps1 -OutFile run_tetris.ps1; .\run_tetris.ps1
+```
+
+Или (PowerShell 7+):
+```powershell
 curl -LO https://raw.githubusercontent.com/mr1xyyy/tetris-test/main/run_tetris.ps1 && .\run_tetris.ps1
 ```
 
