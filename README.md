@@ -5,15 +5,20 @@
 py -3 -m pip install windows-curses
 ```
 
-Запуск:
+## Запуск
 
+### Linux / macOS
 ```bash
 curl -fsSL https://raw.githubusercontent.com/mr1xyyy/tetris-test/main/install.sh | bash
 ```
-или
-```bash
-py tetris.py
+
+### Windows (CMD)
+```cmd
+curl -LO https://raw.githubusercontent.com/mr1xyyy/tetris-test/main/run_tetris.bat && run_tetris.bat
 ```
+
+### Windows (вручную)
+Скачайте `run_tetris.bat` и дважды кликните по нему.
 
 
 ## Параметры
