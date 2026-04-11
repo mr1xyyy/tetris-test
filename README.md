@@ -11,7 +11,9 @@ py -3 -m pip install windows-curses
 curl -fsSL https://raw.githubusercontent.com/mr1xyyy/tetris-test/main/install.sh | bash
 ```
 или
--`run_tetris.bat` - Файл для запуска
+```bash
+py tetris.py
+```
 
 
 ## Параметры
